@@ -1,0 +1,9 @@
+{% if latest_person_list %}
+    <ol>
+    {% for person in latest_person_list %}
+        <li><a href="{% url 'asigm:detail' person.id %}">{{ person.name }}</a></li>
+    {% endfor %}
+    </ol>
+{% else %}
+    <p>No Data.</p>
+{% endif %}
