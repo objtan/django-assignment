@@ -1,9 +1,15 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'asigm_1_app/style.css' %}" />
+
 {% if latest_person_list %}
-    <ol>
+<ol>
     {% for person in latest_person_list %}
-        <li><a href="{% url 'asigm:detail' person.id %}">{{ person.name }}</a></li>
+    <li><a href="{% url 'asigm:detail' person.id %}" style="text-decoration: none">{{ person.name }}</a> | <a
+            href="delete/{{ person.id }}" style="text-decoration: none">delete</a></li>
     {% endfor %}
-    </ol>
+</ol>
 {% else %}
-    <p>No Data.</p>
+<p>No Data.</p>
 {% endif %}
+
+<a href="{% url 'asigm:adduser' %} ">Add New User</a>

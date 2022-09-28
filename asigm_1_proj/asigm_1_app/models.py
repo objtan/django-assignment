@@ -6,3 +6,4 @@ class Person(models.Model):
     age = models.IntegerField()
     address = models.CharField(max_length=200)
     mobile_number = models.CharField(max_length=50)
+

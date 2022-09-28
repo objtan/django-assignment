@@ -1,0 +1,15 @@
+{% for message in messages %}
+    
+           {{ message }}
+
+{% endfor %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+  
+    <button type="submit" value=""> Save</button>
+
+    <button value=""><a href="{% url 'asigm:index' %} ">Back Home</a></button>
+
+</form>
